@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Basics Chapter 1 - Interactive SPA</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6f9;color:#222}
+header{background:#1e3a8a;color:white;padding:20px;text-align:center}
+nav{position:sticky;top:0;background:#fff;padding:10px;border-bottom:1px solid #ddd;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+nav button{padding:10px 14px;border:none;background:#2563eb;color:#fff;border-radius:6px;cursor:pointer}
+.section{display:none;padding:30px;max-width:1100px;margin:auto}
+.active{display:block}
+.card{background:white;padding:20px;margin:15px 0;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.quiz button{margin:5px}
+.answer{display:none;color:green;font-weight:bold}
+footer{text-align:center;padding:20px;color:#666}
+</style>
+<script>
+function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function reveal(id){document.getElementById(id).style.display='block';}
+</script>
+</head>
+<body>
+<header><h1>Chapter 1: Business Basics</h1><h3>50-Minute Interactive Lecture</h3></header>
+<nav>
+<button onclick="show('s1')">1. Business</button>
+<button onclick="show('s2')">2. Profit</button>
+<button onclick="show('s3')">3. Production</button>
+<button onclick="show('s4')">4. Environment</button>
+<button onclick="show('s5')">5. Types</button>
+<button onclick="show('s6')">6. Life Skills</button>
+</nav>
+<section id='s1' class='section active'><div class='card'><h2>What is a Business?</h2><p>A business offers goods, services, or both with the goal of earning a profit.</p><h3>Think-Pair-Share</h3><p>What businesses did you use in the last 24 hours?</p></div></section>
+<section id='s2' class='section'><div class='card'><h2>Profit vs Nonprofit</h2><p><b>Profit = Revenue - Expenses</b></p><p>Nonprofits generate revenue but reinvest it into their mission.</p><div class='quiz'><button onclick="reveal('a1')">Examples?</button><div id='a1' class='answer'>Red Cross, Habitat for Humanity, Amnesty International</div></div></div></section>
+<section id='s3' class='section'><div class='card'><h2>Factors of Production</h2><ul><li>Labor</li><li>Natural Resources</li><li>Capital (Real & Financial)</li><li>Entrepreneurial Talent</li><li>Intellectual Property</li><li>Technology</li></ul><p>Activity: Pick Amazon, Nike, Tesla, or Starbucks and identify each factor.</p></div></section>
+<section id='s4' class='section'><div class='card'><h2>Business Environment</h2><h3>Competition</h3><p>Better products, lower prices, branding, customer satisfaction.</p><h3>Social Environment</h3><p>Aging population, diversity, green movement.</p><h3>Globalization</h3><p>Offshoring, new markets, competition, political risk.</p><h3>Technology</h3><p>E-commerce, AI, cybersecurity, privacy.</p></div></section>
+<section id='s5' class='section'><div class='card'><h2>Types of Businesses</h2><ul><li>Local</li><li>Regional</li><li>National</li><li>Multinational (MNC)</li></ul><h3>Supply Chain</h3><p>Supplier → Manufacturer → Wholesaler → Retailer → Consumer</p></div></section>
+<section id='s6' class='section'><div class='card'><h2>Life Skills = Business Skills</h2><ul><li>Funding → Revenue</li><li>Expenses → Costs</li><li>Technology → Efficiency</li><li>E-Commerce → Online Sales</li><li>Security → Cybersecurity</li><li>Goals → Profit & Growth</li></ul><h3>Exit Ticket</h3><ol><li>List 3 factors of production.</li><li>Name one globalization opportunity and risk.</li><li>What business skill do you already use?</li></ol></div></section>
+<footer>Prepared for Intro to Business - Chapter 1</footer>
+</body></html>
