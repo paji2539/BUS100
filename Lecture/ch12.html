@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing and Consumer Behavior &middot; Chapter 12 Lecture</title>
+<meta name="description" content="Interactive 50-minute lecture companion for BUS 100 Chapter 12: Marketing and Consumer Behavior">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A32; --ink-soft:#4B5760; --paper:#FBF7EE; --panel:#FFFFFF;
+    --navy:#1F3A4D; --teal:#2E6E70; --teal-deep:#1D4A4C; --gold:#B08D57;
+    --gold-deep:#8A6B3D; --sand:#F1E7D3; --rule:#DED0B0; --line:#E4DCC8;
+    --muted:#8A8578; --shareholder:#7F4B3A; --stakeholder:#1F6E5E;
+    --radius:14px; --serif:'Fraunces', Georgia, serif; --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  ::selection{ background:var(--gold); color:#fff; }
+  a{ color:inherit; }
+  .topbar{ position:sticky; top:0; z-index:40; display:flex; align-items:center; gap:18px; padding:12px 28px; background:rgba(251,247,238,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .topbar .brand{ font-family:var(--serif); font-weight:600; font-size:15px; color:var(--navy); white-space:nowrap; }
+  .topbar nav{ display:flex; gap:4px; overflow-x:auto; flex:1; scrollbar-width:none; }
+  .topbar nav::-webkit-scrollbar{ display:none; }
+  .topbar nav a{ text-decoration:none; font-size:13px; font-weight:600; color:var(--ink-soft); padding:6px 10px; border-radius:8px; white-space:nowrap; }
+  .topbar nav a:hover{ background:var(--sand); color:var(--navy); }
+  .topbar .clock{ font-variant-numeric:tabular-nums; font-size:13px; color:var(--muted); white-space:nowrap; border-left:1px solid var(--line); padding-left:16px; }
+  .progress-rail{ position:sticky; top:45px; z-index:39; height:3px; background:var(--line); }
+  .progress-fill{ height:100%; width:0%; background:var(--gold); transition:width .3s ease; }
+  .hero{ max-width:760px; margin:0 auto; padding:90px 28px 70px; }
+  .eyebrow{ font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:18px; }
+  .hero h1{ font-family:var(--serif); font-weight:600; font-size:clamp(38px,6vw,64px); line-height:1.05; margin:0 0 22px; color:var(--navy); }
+  .hero p.lede{ font-size:19px; color:var(--ink-soft); max-width:56ch; margin:0 0 34px; }
+  .hero .lede em{ font-style:italic; color:var(--navy); }
+  .cta{ display:inline-flex; align-items:center; gap:8px; background:var(--navy); color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:13px 22px; border-radius:999px; transition:transform .15s ease, background .15s ease; }
+  .cta:hover{ background:var(--teal-deep); transform:translateY(-1px); }
+  .receipt-wrap{ max-width:760px; margin:0 auto 90px; padding:0 28px; }
+  .receipt{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:34px 34px 20px; box-shadow:0 24px 60px -40px rgba(31,58,77,.35); }
+  .receipt h2{ font-family:var(--serif); font-weight:600; font-size:22px; margin:0 0 4px; color:var(--navy); }
+  .receipt .sub{ font-size:14px; color:var(--muted); margin-bottom:22px; }
+  .receipt-row{ display:flex; align-items:baseline; gap:14px; padding:12px 0; border-top:1px dashed var(--rule); font-size:15px; }
+  .receipt-row:first-of-type{ border-top:none; }
+  .receipt-row .num{ font-family:var(--serif); font-weight:600; color:var(--gold-deep); font-size:15px; }
+  .receipt-row .txt{ flex:1; color:var(--ink); }
+  .receipt-row .status{ font-size:12px; color:var(--teal-deep); font-weight:600; white-space:nowrap; }
+  .receipt-foot{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); font-style:italic; }
+  section.obj{ max-width:760px; margin:0 auto; padding:64px 28px; border-top:1px solid var(--line); }
+  section.obj.wide{ max-width:880px; }
+  .kicker{ font-size:13px; font-weight:700; color:var(--teal-deep); letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px; }
+  h2.title{ font-family:var(--serif); font-weight:600; font-size:clamp(26px,4vw,36px); color:var(--navy); margin:0 0 18px; line-height:1.15; }
+  h3.sub{ font-family:var(--serif); font-weight:600; font-size:20px; color:var(--navy); margin:34px 0 14px; }
+  p.body-text{ font-size:16px; color:var(--ink-soft); max-width:64ch; }
+  ul.plain{ padding-left:0; list-style:none; margin:14px 0; }
+  ul.plain li{ position:relative; padding-left:22px; margin-bottom:10px; font-size:15.5px; color:var(--ink); }
+  ul.plain li::before{ content:''; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  .term{ background:var(--sand); border-left:3px solid var(--gold); border-radius:0 10px 10px 0; padding:16px 20px; margin:16px 0; }
+  .term .word{ font-weight:700; color:var(--navy); font-family:var(--serif); font-size:17px; }
+  .term .def{ color:var(--ink-soft); font-size:15px; margin-top:4px; }
+  .flip-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:22px 0; }
+  .flip{ perspective:1200px; height:160px; cursor:pointer; }
+  .flip-inner{ position:relative; width:100%; height:100%; transition:transform .55s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; }
+  .flip.flipped .flip-inner{ transform:rotateY(180deg); }
+  .flip-face{ position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; padding:18px; display:flex; flex-direction:column; justify-content:center; border:1px solid var(--line); }
+  .flip-front{ background:var(--panel); }
+  .flip-front .name{ font-family:var(--serif); font-weight:600; font-size:18px; color:var(--navy); }
+  .flip-front .hint{ font-size:12px; color:var(--muted); margin-top:8px; }
+  .flip-back{ background:var(--navy); color:#fff; transform:rotateY(180deg); font-size:13.5px; line-height:1.5; }
+  .activity{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px 26px; margin:28px 0; }
+  .activity.disc{ border-color:var(--gold); box-shadow:0 0 0 1px var(--gold) inset; }
+  .activity .label{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--teal-deep); font-size:13px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px; }
+  .activity .label svg{ width:16px; height:16px; }
+  .activity .q{ font-size:16.5px; color:var(--navy); font-weight:600; margin:6px 0; }
+  .activity .q.small{ font-size:15px; font-weight:500; color:var(--ink); }
+  .timer-row{ display:flex; align-items:center; gap:14px; margin-top:16px; }
+  .timer-btn{ border:1px solid var(--navy); background:var(--navy); color:#fff; border-radius:999px; padding:8px 18px; font-size:13px; font-weight:600; cursor:pointer; }
+  .timer-btn:hover{ background:var(--teal-deep); border-color:var(--teal-deep); }
+  .timer-display{ font-variant-numeric:tabular-nums; font-size:20px; font-weight:600; color:var(--navy); }
+  .pillars{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:24px 0; }
+  .pillar{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 14px; cursor:pointer; transition:border-color .15s ease, background .15s ease; }
+  .pillar .n{ font-family:var(--serif); font-weight:600; color:var(--gold-deep); font-size:14px; }
+  .pillar .t{ font-size:13.5px; color:var(--ink); margin-top:6px; line-height:1.35; }
+  .pillar.active{ border-color:var(--teal); background:#EFF6F3; }
+  .accordion{ margin:22px 0; }
+  .acc-item{ border-bottom:1px solid var(--line); }
+  .acc-head{ display:flex; align-items:center; justify-content:space-between; cursor:pointer; padding:16px 2px; font-weight:600; color:var(--navy); font-size:16px; }
+  .acc-head .chev{ transition:transform .25s ease; color:var(--gold-deep); font-size:14px; }
+  .acc-item.open .acc-head .chev{ transform:rotate(180deg); }
+  .acc-body{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+  .acc-item.open .acc-body{ max-height:320px; }
+  .acc-body-inner{ padding:0 2px 18px; }
+  .acc-body-inner ul{ margin:0; padding-left:18px; color:var(--ink-soft); font-size:15px; }
+  .acc-body-inner li{ margin-bottom:6px; }
+  .market-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; margin:22px 0; }
+  .market-card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .market-card .icon{ font-size:22px; margin-bottom:8px; }
+  .market-card .h{ font-weight:700; color:var(--navy); font-size:15px; margin-bottom:6px; }
+  .market-card .d{ font-size:13.5px; color:var(--ink-soft); }
+  .wrap-terms{ display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 0; }
+  .wrap-terms span{ background:var(--sand); color:var(--navy); font-size:13px; font-weight:600; padding:6px 12px; border-radius:999px; }
+  .special{ background:var(--navy); color:#F4F0E4; }
+  .special .kicker{ color:#D9C591; }
+  .special h2.title{ color:#fff; }
+  .special p.body-text{ color:#CBD3D6; }
+  .special h3.sub{ color:#F4F0E4; }
+  .theory-cols{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:30px 0; }
+  @media (max-width:620px){ .theory-cols{ grid-template-columns:1fr; } }
+  .theory-card{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:22px; }
+  .theory-card .who{ font-size:12px; text-transform:uppercase; letter-spacing:.05em; font-weight:700; }
+  .theory-card.shareholder .who{ color:#E3A88F; }
+  .theory-card.stakeholder .who{ color:#7FD4B8; }
+  .theory-card h4{ font-family:var(--serif); font-size:20px; margin:6px 0 12px; color:#fff; }
+  .theory-card p{ font-size:14.5px; color:#D8DEDF; line-height:1.55; }
+  .theory-card .quote{ font-style:italic; border-left:2px solid rgba(255,255,255,.25); padding-left:12px; margin-top:12px; font-size:13.5px; color:#C6CBCC; }
+  .compare-table{ width:100%; border-collapse:collapse; margin:26px 0; font-size:14px; }
+  .compare-table th, .compare-table td{ text-align:left; padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.14); vertical-align:top; }
+  .compare-table th{ color:#D9C591; font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:.03em; }
+  .compare-table td{ color:#D8DEDF; }
+  .compare-table td:first-child{ color:#F4F0E4; font-weight:600; }
+  .light-table{ width:100%; border-collapse:collapse; margin:20px 0; font-size:14.5px; }
+  .light-table th,.light-table td{ text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .light-table th{ color:var(--teal-deep); font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:.03em; }
+  .light-table td{ color:var(--ink-soft); }
+  .light-table td:first-child{ color:var(--navy); font-weight:600; }
+  .special .activity{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16); }
+  .special .activity .label{ color:#D9C591; }
+  .special .activity .q{ color:#fff; }
+  .special .timer-btn{ background:var(--gold); border-color:var(--gold); color:#1F2937; }
+  .special .timer-btn:hover{ background:var(--gold-deep); border-color:var(--gold-deep); color:#fff; }
+  .special .timer-display{ color:#fff; }
+  .scale-wrap{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:28px; margin:30px 0; }
+  .scale-wrap .caption{ text-align:center; font-size:13px; color:#B9C0C2; margin-bottom:6px; }
+  #scaleSvg{ width:100%; height:auto; display:block; }
+  .slider-row{ display:flex; align-items:center; gap:14px; margin-top:16px; }
+  .slider-row span{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+  .slider-row span.left{ color:#E3A88F; }
+  .slider-row span.right{ color:#7FD4B8; }
+  input[type="range"]{ -webkit-appearance:none; flex:1; height:4px; border-radius:999px; background:linear-gradient(90deg,#7F4B3A,#1F6E5E); }
+  input[type="range"]::-webkit-slider-thumb{ -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:#fff; border:3px solid var(--gold); cursor:pointer; margin-top:-8px; }
+  #scaleReadout{ text-align:center; margin-top:14px; font-size:14.5px; color:#F4F0E4; min-height:22px; }
+  .stat-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin:22px 0; }
+  .stat{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .stat .v{ font-family:var(--serif); font-weight:600; font-size:26px; color:var(--gold-deep); }
+  .stat .l{ font-size:12.5px; color:var(--ink-soft); margin-top:4px; }
+  .example-box{ background:#EFF6F3; border:1px solid #cfe4dc; border-radius:12px; padding:18px 20px; margin:18px 0; }
+  .example-box .tag{ font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--teal-deep); margin-bottom:6px; }
+  .example-box .txt{ font-size:15px; color:var(--ink); }
+  footer{ max-width:760px; margin:0 auto; padding:50px 28px 90px; display:flex; justify-content:space-between; align-items:center; font-size:14px; color:var(--muted); border-top:1px solid var(--line); }
+  footer a{ text-decoration:none; font-weight:600; color:var(--navy); }
+  footer a:hover{ color:var(--teal-deep); }
+  @media (max-width:640px){
+    .topbar{ padding:10px 16px; gap:10px; }
+    .topbar .clock{ display:none; }
+    .hero{ padding:64px 20px 50px; }
+    section.obj{ padding:48px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">Bus 100 &middot; Ch. 12</div>
+  <nav>
+    <a href="#o121">12.1</a>
+<a href="#o122">12.2</a>
+<a href="#o123">12.3</a>
+<a href="#o124">12.4</a>
+<a href="#o125">12.5</a>
+<a href="#wrap">Wrap</a>
+  </nav>
+  <div class="clock"><span id="clockDisplay">00:00</span> / 50:00</div>
+</div>
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="hero">
+  <div class="eyebrow">Bus 100 &middot; Chapter 12</div>
+  <h1>Marketing and Consumer Behavior</h1>
+  <p class="lede">Every purchase &mdash; yours included &mdash; follows a pattern marketers study closely. Today we trace how people decide what to buy, what marketing actually does for (and to) us, and how companies find and reach the right customer.</p>
+  <a class="cta" href="#receipt">Begin class &rarr;</a>
+</header>
+
+<div class="receipt-wrap" id="receipt">
+  <div class="receipt">
+    <h2>Today's receipt</h2>
+    <div class="sub">What you're getting for your 50 minutes</div>
+    <div class="receipt-row"><span class="num">12.1</span><span class="txt">How people decide to buy</span><span class="status">included</span></div>
+<div class="receipt-row"><span class="num">12.2</span><span class="txt">What marketing does</span><span class="status">included</span></div>
+<div class="receipt-row"><span class="num">12.3</span><span class="txt">The marketing environment</span><span class="status">included</span></div>
+<div class="receipt-row"><span class="num">12.4</span><span class="txt">Market research and planning</span><span class="status">included</span></div>
+<div class="receipt-row"><span class="num">12.5</span><span class="txt">Target markets and the mix</span><span class="status">included</span></div>
+    <div class="receipt-foot">Watch for the gold-edged boxes &mdash; that's your cue to actually discuss, not just read.</div>
+  </div>
+</div>
+
+<section class="obj" id="o121">
+  <div class="kicker">Objective 12.1</div>
+  <h2 class="title">How people (and businesses) decide to buy</h2>
+  <p class="body-text">Every purchase, big or small, tends to follow the same basic path.</p>
+  <div class="term"><div class="word">Consumer behavior</div><div class="def">How people select, buy, use, and dispose of products.</div></div>
+<h3 class="sub">The consumer buying process</h3>
+<p class="body-text">Tap each step in order.</p>
+<div class="pillars" id="buyPillars"><div class="pillar" data-detail="The buyer realizes there’s a gap between what they have and what they want."><div class="n">1</div><div class="t">Need recognition</div></div>
+<div class="pillar" data-detail="The buyer researches options &mdash; reviews, friends, ads, comparisons."><div class="n">2</div><div class="t">Information search</div></div>
+<div class="pillar" data-detail="The buyer compares the options against what matters most to them."><div class="n">3</div><div class="t">Evaluate alternatives</div></div>
+<div class="pillar" data-detail="The buyer commits and makes the purchase."><div class="n">4</div><div class="t">Purchase decision</div></div>
+<div class="pillar" data-detail="The buyer decides whether the product met expectations &mdash; shaping the next cycle."><div class="n">5</div><div class="t">Post-purchase evaluation</div></div></div><div id="buyPillarsDetail" style="min-height:28px; font-size:14.5px; color:var(--ink-soft); font-style:italic; margin-top:4px;">Tap a card above to see the idea behind it.</div>
+<h3 class="sub">Two very different markets</h3>
+<div class="flip-grid" id="marketFlip"><div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">B2C</div><div class="hint">consumer markets &middot; tap to flip</div></div>
+      <div class="flip-face flip-back">Business-to-consumer: selling directly to individual buyers making personal purchase decisions.</div>
+    </div></div>
+<div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">B2B</div><div class="hint">business markets &middot; tap to flip</div></div>
+      <div class="flip-face flip-back">Business-to-business: selling to other organizations, often with longer sales cycles and multiple decision-makers.</div>
+    </div></div></div>
+<div class="activity disc"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>In-class discussion</div><div class="q">Walk through the five steps for your last big purchase. Where did you spend the most time, and why?</div><div class="timer-row"><button class="timer-btn" data-timer="180">Start 3:00</button><span class="timer-display" data-display>3:00</span></div></div>
+</section>
+<section class="obj" id="o122">
+  <div class="kicker">Objective 12.2</div>
+  <h2 class="title">What marketing actually does</h2>
+  <p class="body-text">Marketing has a real job to do &mdash; and a real set of criticisms it has to answer for.</p>
+  <div class="term"><div class="word">Marketing</div><div class="def">Creating, communicating, and delivering value to customers.</div></div>
+<h3 class="sub">Marketing has evolved through eras</h3>
+<p class="body-text">Tap each era.</p>
+<div class="pillars" id="eraPillars"><div class="pillar" data-detail="Focused on making enough product &mdash; demand outstripped supply, so selling wasn’t the hard part."><div class="n">01</div><div class="t">Production era</div></div>
+<div class="pillar" data-detail="Focused on persuading customers to buy what the company had already made."><div class="n">02</div><div class="t">Sales era</div></div>
+<div class="pillar" data-detail="Focused on identifying customer needs first, then building products to meet them."><div class="n">03</div><div class="t">Marketing era</div></div>
+<div class="pillar" data-detail="Focused on long-term customer relationships, not just single transactions."><div class="n">04</div><div class="t">Relationship era</div></div>
+<div class="pillar" data-detail="Focused on real-time, personalized engagement through social and mobile channels."><div class="n">05</div><div class="t">Social/mobile era</div></div></div><div id="eraPillarsDetail" style="min-height:28px; font-size:14.5px; color:var(--ink-soft); font-style:italic; margin-top:4px;">Tap a card above to see the idea behind it.</div>
+<div class="accordion" id="critAcc"><div class="acc-item"><div class="acc-head"><span>Benefits of marketing</span><span class="chev">&#9660;</span></div>
+      <div class="acc-body"><div class="acc-body-inner"><ul><li>Satisfies customer needs</li>
+<li>Supports business growth</li></ul></div></div></div>
+<div class="acc-item"><div class="acc-head"><span>Criticisms of marketing</span><span class="chev">&#9660;</span></div>
+      <div class="acc-body"><div class="acc-body-inner"><ul><li>Privacy concerns</li>
+<li>Hidden fees</li>
+<li>Misleading practices</li></ul></div></div></div></div>
+<div class="activity disc"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Discussion question</div><div class="q">Which marketing criticism &mdash; privacy, hidden fees, or misleading practices &mdash; bothers you most as a consumer? Can you think of an example?</div><div class="timer-row"><button class="timer-btn" data-timer="150">Start 2:30</button><span class="timer-display" data-display>2:30</span></div></div>
+</section>
+<section class="obj" id="o123">
+  <div class="kicker">Objective 12.3</div>
+  <h2 class="title">The environment marketing operates in</h2>
+  <p class="body-text">No marketing plan exists in a vacuum &mdash; forces inside and outside the company shape what works.</p>
+  <div class="flip-grid" id="envFlip"><div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">Internal environment</div><div class="hint">tap to flip</div></div>
+      <div class="flip-face flip-back">Factors within the company itself &mdash; resources, culture, other departments’ decisions.</div>
+    </div></div>
+<div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">External environment</div><div class="hint">tap to flip</div></div>
+      <div class="flip-face flip-back">Factors outside the company’s control that still shape its strategy.</div>
+    </div></div></div>
+<h3 class="sub">External factors to watch</h3>
+<div class="market-grid"><div class="market-card"><div class="icon">&#128101;</div><div class="h">Demographic</div><div class="d">Age, income, education, and other population characteristics.</div></div>
+<div class="market-card"><div class="icon">&#128200;</div><div class="h">Economic</div><div class="d">Inflation, employment, and overall spending power.</div></div>
+<div class="market-card"><div class="icon">&#128187;</div><div class="h">Technological</div><div class="d">New tools and platforms that change how customers shop.</div></div>
+<div class="market-card"><div class="icon">&#127963;</div><div class="h">Political</div><div class="d">Regulations and government policy affecting the industry.</div></div>
+<div class="market-card"><div class="icon">&#127760;</div><div class="h">Cultural</div><div class="d">Shifting values, trends, and social norms.</div></div></div>
+</section>
+<section class="obj" id="o124">
+  <div class="kicker">Objective 12.4</div>
+  <h2 class="title">Researching before you launch</h2>
+  <p class="body-text">Good marketing starts with good information &mdash; guessing is expensive.</p>
+  <div class="term"><div class="word">Market research</div><div class="def">Collecting and analyzing information to guide marketing decisions.</div></div>
+<h3 class="sub">Two types of data</h3>
+<div class="flip-grid" id="dataTypeFlip"><div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">Primary data</div><div class="hint">tap to flip</div></div>
+      <div class="flip-face flip-back">Information collected firsthand for a specific purpose &mdash; surveys, interviews, experiments.</div>
+    </div></div>
+<div class="flip"><div class="flip-inner">
+      <div class="flip-face flip-front"><div class="name">Secondary data</div><div class="hint">tap to flip</div></div>
+      <div class="flip-face flip-back">Information that already exists, collected by someone else for another purpose &mdash; industry reports, government data.</div>
+    </div></div></div>
+<h3 class="sub">What a marketing plan includes</h3>
+<ul class="plain"><li>Objectives</li>
+<li>Situational analysis</li>
+<li>Target market</li>
+<li>Marketing mix</li></ul>
+</section>
+<section class="obj" id="o125">
+  <div class="kicker">Objective 12.5</div>
+  <h2 class="title">Targeting the right customer with the right mix</h2>
+  <p class="body-text">Once you know who you’re selling to, the marketing mix is how you actually reach them.</p>
+  <h3 class="sub">Four ways to segment a market</h3>
+<p class="body-text">Tap each to see how it slices the market.</p>
+<div class="pillars" id="segPillars"><div class="pillar" data-detail="Segmenting by location &mdash; region, climate, city size."><div class="n">01</div><div class="t">Geographic</div></div>
+<div class="pillar" data-detail="Segmenting by measurable traits &mdash; age, income, gender, education."><div class="n">02</div><div class="t">Demographic</div></div>
+<div class="pillar" data-detail="Segmenting by lifestyle, values, and personality."><div class="n">03</div><div class="t">Psychographic</div></div>
+<div class="pillar" data-detail="Segmenting by how people actually use or respond to a product."><div class="n">04</div><div class="t">Behavioral</div></div></div><div id="segPillarsDetail" style="min-height:28px; font-size:14.5px; color:var(--ink-soft); font-style:italic; margin-top:4px;">Tap a card above to see the idea behind it.</div>
+<h3 class="sub">The marketing mix (the 4 Ps)</h3>
+<div class="market-grid"><div class="market-card"><div class="icon">&#128230;</div><div class="h">Product</div><div class="d">What you’re actually selling, and how it’s designed and packaged.</div></div>
+<div class="market-card"><div class="icon">&#128176;</div><div class="h">Price</div><div class="d">What customers pay, and how that price is positioned.</div></div>
+<div class="market-card"><div class="icon">&#128227;</div><div class="h">Promotion</div><div class="d">How you communicate value &mdash; advertising, PR, social media.</div></div>
+<div class="market-card"><div class="icon">&#128205;</div><div class="h">Place</div><div class="d">Where and how customers actually get the product.</div></div></div>
+<div class="activity disc"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Discussion question</div><div class="q">Pick a brand you like. Describe its marketing mix: product, price, promotion, and place.</div><div class="timer-row"><button class="timer-btn" data-timer="180">Start 3:00</button><span class="timer-display" data-display>3:00</span></div></div>
+</section>
+
+
+
+<section class="obj" id="wrap">
+  <div class="kicker">Chapter 12 &middot; Wrap-up</div>
+  <h2 class="title">Closing the campaign</h2>
+  <p class="body-text">Key terms from today:</p>
+  <div class="wrap-terms"><span>Consumer behavior</span><span>B2C</span><span>B2B</span><span>Marketing</span><span>Marketing era</span><span>Market research</span><span>Primary data</span><span>Secondary data</span><span>Market segmentation</span><span>Demographic</span><span>Psychographic</span><span>Behavioral</span><span>Marketing mix</span><span>Product</span><span>Price</span><span>Promotion</span><span>Place</span></div>
+  <div class="activity disc"><div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Activity minute</div><div class="q small">Which key term from this chapter matters most, and why?</div>
+<div class="q small">Your one biggest “aha” moment from today.</div>
+<div class="q small">What’s the best piece of marketing you’ve seen recently?</div><div class="timer-row"><button class="timer-btn" data-timer="180">Start 3:00</button><span class="timer-display" data-display>3:00</span></div></div>
+  <p class="body-text" style="margin-top:34px;">Chapter 11 got the product made. Chapter 12 got it in front of the right customer. Next, we look at how a business actually pays for all of this.</p>
+</section>
+
+<footer>
+  <a href="ch11.html">&larr; Chapter 11</a>
+  <span>Total &mdash; 50 min &middot; paid in full</span>
+  <a href="ch15.html">Chapter 15 &rarr;</a>
+</footer>
+
+<script>
+(function(){
+  var start = Date.now();
+  var clockEl = document.getElementById('clockDisplay');
+  var fillEl = document.getElementById('progressFill');
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function tick(){
+    var elapsed = Math.floor((Date.now()-start)/1000);
+    var capped = Math.min(elapsed, 3000);
+    var m = Math.floor(capped/60), s = capped%60;
+    clockEl.textContent = pad(m)+':'+pad(s);
+    fillEl.style.width = Math.min(100, (capped/3000)*100)+'%';
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  document.querySelectorAll('.flip').forEach(function(card){
+    card.addEventListener('click', function(){ card.classList.toggle('flipped'); });
+  });
+
+  document.querySelectorAll('.pillars').forEach(function(grid){
+    var detail = document.getElementById(grid.id+'Detail');
+    grid.querySelectorAll('.pillar').forEach(function(p){
+      p.addEventListener('click', function(){
+        grid.querySelectorAll('.pillar').forEach(function(x){ x.classList.remove('active'); });
+        p.classList.add('active');
+        if(detail){ detail.innerHTML = p.getAttribute('data-detail'); }
+      });
+    });
+  });
+
+  document.querySelectorAll('.acc-head').forEach(function(h){
+    h.addEventListener('click', function(){
+      var item = h.parentElement;
+      var wasOpen = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.acc-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+
+  document.querySelectorAll('[data-timer]').forEach(function(btn){
+    var total = parseInt(btn.getAttribute('data-timer'), 10);
+    var display = btn.parentElement.querySelector('[data-display]');
+    var remaining = total;
+    var interval = null;
+    function render(){
+      var m = Math.floor(remaining/60), s = remaining%60;
+      display.textContent = m+':'+pad(s);
+    }
+    btn.addEventListener('click', function(){
+      if(interval){ clearInterval(interval); interval=null; btn.textContent='Restart'; remaining=total; render(); return; }
+      btn.textContent = 'Running…';
+      interval = setInterval(function(){
+        remaining--;
+        render();
+        if(remaining<=0){
+          clearInterval(interval); interval=null;
+          btn.textContent = 'Time! Restart';
+        }
+      }, 1000);
+    });
+  });
+
+  var slider = document.getElementById('scaleSlider');
+  if(slider){
+    var beam = document.getElementById('beam');
+    var readout = document.getElementById('scaleReadout');
+    var leftLabel = document.getElementById('scaleLeftLabel') ? document.getElementById('scaleLeftLabel').textContent : 'A';
+    var rightLabel = document.getElementById('scaleRightLabel') ? document.getElementById('scaleRightLabel').textContent : 'B';
+    function updateScale(){
+      var v = parseInt(slider.value, 10);
+      var tilt = (v-50)/50 * 12;
+      beam.setAttribute('transform', 'rotate('+tilt+' 320 0) translate(0 20)');
+      var msg;
+      if(v < 30){ msg = 'Leaning ' + leftLabel + '.'; }
+      else if(v < 45){ msg = 'Mostly ' + leftLabel + ', with some room for the other side.'; }
+      else if(v <= 55){ msg = 'Balanced &mdash; equal weight to both sides.'; }
+      else if(v < 70){ msg = 'Mostly ' + rightLabel + ', without ignoring the other side.'; }
+      else{ msg = 'Leaning ' + rightLabel + '.'; }
+      readout.innerHTML = msg;
+    }
+    slider.addEventListener('input', updateScale);
+    updateScale();
+  }
+})();
+</script>
+
+</body>
+</html>
